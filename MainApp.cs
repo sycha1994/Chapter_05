@@ -9,7 +9,7 @@ namespace Chapter_05
             object obj = null;
 
             string s = ReadLine();
-            if (int.TryParse(s, out int out_i))
+            if (int.TryParse(s, out int out_i)) 
                 obj = out_i;
             else if (float.TryParse(s, out float out_f))
                 obj = out_f;
@@ -18,8 +18,11 @@ namespace Chapter_05
 
             switch (obj)
             {
+                case int i when i >= 0:
+                    WriteLine($"{i}는 int 형식이며 양수입니다");
+                    break;
                 case int i:
-                    WriteLine($"{i}는 int 형식입니다.");
+                    WriteLine($"{i}는 int 형식이며 음수입니다.");
                     break;
                 case float f:
                     WriteLine($"{f}는 float 형식입니다.");
